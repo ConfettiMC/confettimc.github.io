@@ -1,0 +1,156 @@
+// Common SASS variables/mixins/etc.
+
+@function theme($name) {
+    @return rgb(var($name));
+}
+
+@function atheme($name, $alpha) {
+    @return rgb(var($name) / $alpha);
+}
+
+%reset {
+    appearance: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+    font-style: normal;
+}
+
+%row {
+    display: flex;
+    flex-direction: row;
+}
+
+%rowC {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+%rowS {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+%col {
+    display: flex;
+    flex-direction: column;
+}
+
+%colC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+%colS {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+%center {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+%space {
+    @extend %reset;
+    width: 0;
+    height: 0;
+    margin: auto;
+}
+
+%line {
+    @extend %reset;
+    width: 100%;
+    height: 1px;
+    background-color: atheme(--foreground, 0.25);
+}
+
+%fontM {
+    font-family: "JetBrains Mono", monospace;
+}
+
+%fontR {
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+        sans-serif;
+}
+
+%button {
+    @extend %reset;
+    @extend %center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: background-color 200ms;
+
+    &:focus {
+        border: 2px solid theme(--accent);
+    }
+
+    &.gray {
+        color: theme(--foreground);
+
+        &:hover {
+            background-color: rgb(var(--foregroundFore) / 0.08);
+            color: theme(--foregroundFore);
+        }
+
+        &:focus {
+            border: 2px solid theme(--foregroundFore);
+        }
+    }
+
+    &.info {
+        color: theme(--foregroundFore);
+        background-color: rgb(var(--aqua) / 0.16);
+
+        &:hover {
+            color: theme(--aqua);
+        }
+
+        &:focus {
+            border: 2px solid theme(--aqua);
+        }
+    }
+
+    &.disturbing {
+        color: theme(--foregroundFore);
+        background-color: rgb(var(--red) / 0.16);
+
+        &:hover {
+            color: theme(--red);
+        }
+
+        &:focus {
+            border: 2px solid theme(--red);
+        }
+    }
+
+    &.positive {
+        color: theme(--foregroundFore);
+        background-color: rgb(var(--green) / 0.16);
+
+        &:hover {
+            color: theme(--green);
+        }
+
+        &:focus {
+            border: 2px solid theme(--green);
+        }
+    }
+}

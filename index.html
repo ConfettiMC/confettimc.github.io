@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confetti Project</title>
+    <link rel="stylesheet" href="assets/styles/global.css">
+    <script src="https://kit.fontawesome.com/1b6c69daa5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <hr>
+        <a href="" class="button">
+            <i class="fa-solid fa-house"></i>
+            <strong>Home</strong>
+        </a>
+        <hr class="sep">
+        <a href="user_guide.html" class="button">
+            <i class="fa-solid fa-user"></i>
+            <strong>User guide</strong>
+        </a>
+        <a href="dev_tools.html" class="button">
+            <i class="fa-solid fa-wrench"></i>
+            <strong>Tools for developers</strong>
+        </a>
+        <hr class="sep">
+        <a href="https://github.com/ConfettiMC/datapack" class="button">
+            <i class="fa-solid fa-code-branch"></i>
+            <strong>GitHub</strong>
+        </a>
+        <hr>
+    </header>
+    <main>
+        <h1>Confetti project</h1>
+        <h4>A powerful minecraft data-pack framework, allowing for a blazingly fast development and effortless fabulous
+            player experience!</h4>
+        <article>
+            <h2>
+                <i class="fa-solid fa-code"></i>
+                Are you a developer?
+            </h2>
+            <p>
+                You can find help on a detailed <a href="https://github.com/ConfettiMC/datapack/wiki">Confetti Wiki</a>!
+                There are also <a href="dev_tools.html">Tools for developers</a> that could automize certain things.
+            </p>
+        </article>
+        <article>
+            <h2>How it works</h2>
+            <p>
+                When the data-packs are loaded (starting the server, using <code>/reload</code> command) Confetti will
+                delay the internal loading
+                process until there's a player online, to ensure several important things:
+            </p>
+            <ul>
+                <li>Messages aren't being broadcast to the void, there's a player who can read them</li>
+                <li>Certain commands require a player online (such as detecting Minecraft version using
+                    <code>DataVersion</code> NBT Tag)
+                </li>
+            </ul>
+            <p>
+                After the condition is met, Confetti will load and process all the registered data-packs.
+            </p>
+            <hr>
+            <p>
+                Confetti also provides a dependency checking for Minecraft & other data-packs. This means:
+            </p>
+            <ul>
+                <li>Players will be notified when using an unsupported minecraft version</li>
+                <li>Developers can require things like Libraries, Cores, etc.</li>
+            </ul>
+        </article>
+        <article>
+            <h2>Threads</h2>
+            <p>
+                Confetti has several threads (scheduled functions that are constantly re-scheduling themselves):
+            </p>
+            <ul>
+                <li>
+                    <strong>Tick</strong> - The tick process that is run after the data-packs are loaded
+                </li>
+                <li>
+                    <strong>Player</strong> - The tick executed as & at every player in the world
+                </li>
+                <li>
+                    <strong>Garbage collector</strong> - Removes unused data from data storage and scoreboards. Runs
+                    every 30 seconds
+                </li>
+            </ul>
+        </article>
+    </main>
+</body>
+
+</html>

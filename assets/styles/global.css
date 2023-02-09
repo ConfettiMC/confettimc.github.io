@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+article code, body, .button, article hr, body > header hr {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  background-color: transparent;
+  color: inherit;
+  text-decoration: none;
+  font-style: normal;
+}
+
+body > header, .button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+article, main, body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+body > header hr {
+  width: 0;
+  height: 0;
+  margin: auto;
+}
+
+article hr {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(var(--foreground)/0.25);
+}
+
+article code {
+  font-family: "JetBrains Mono", monospace;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+  --background: 28 25 28;
+  --background-hl: 38 35 38;
+  --foreground: 255 255 255;
+  --yellow: 221 188 112;
+  --pink: 237 10 102;
+  --blue: 121 147 221;
+  --green: 119 185 117;
+}
+
+.button {
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 200ms;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgb(var(--background)/0.08);
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  height: calc(100vh - 3rem);
+  overflow-y: auto;
+  margin-top: 3rem;
+}
+
+body > header {
+  background-color: #4db764;
+  color: rgb(var(--background));
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+  height: 2.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.32);
+}
+body > header hr.sep {
+  min-width: 3px;
+  height: 2rem;
+  background-color: rgb(var(--background)/0.08);
+  margin: 0;
+}
+
+main {
+  width: 40rem;
+  max-width: calc(100vw - 2rem);
+  margin: 2rem auto;
+  gap: 1rem;
+}
+
+h1 > i, h2 > i, h3 > i, h4 > i {
+  margin: 0 0.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h4 {
+  margin: -1rem 0 0 0;
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+
+article {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgb(var(--background-hl));
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+article a {
+  color: #45a8ff;
+}
+article p {
+  margin: 0;
+}
+article code {
+  padding: 0.125rem 0.33rem;
+  background-color: rgb(var(--foreground)/0.08);
+  border-radius: 0.5rem;
+}
+article ul {
+  margin: 0;
+}
+article hr {
+  margin: 1rem 0;
+  min-height: 2px;
+  background-color: rgb(var(--foreground)/0.08);
+}
