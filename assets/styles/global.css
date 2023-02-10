@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-article code, body, .button, article hr, body > header hr {
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;700&display=swap");
+main > section > fieldset input, main > section > fieldset, article code, body, .button, main > section > hr, article hr, main > hr, main > section > fieldset .version_input hr, body > header hr {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -17,31 +17,31 @@ article code, body, .button, article hr, body > header hr {
   font-style: normal;
 }
 
-body > header, .button {
+main > section > fieldset .array > .button, main > section > fieldset .array, main > section > fieldset .version_input, main > section > fieldset legend, main section > header, body > header, .button {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-article, main, body {
+main > section > fieldset, main > section, article, main section > header > div, main, body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
-body > header hr {
+main > section > fieldset .version_input hr, body > header hr {
   width: 0;
   height: 0;
   margin: auto;
 }
 
-article hr {
+main > section > hr, article hr, main > hr {
   width: 100%;
   height: 1px;
   background-color: rgb(var(--foreground)/0.25);
 }
 
-article code {
+main > section > fieldset .output span, main > section > fieldset input, article code {
   font-family: "JetBrains Mono", monospace;
 }
 
@@ -102,6 +102,21 @@ main {
   margin: 2rem auto;
   gap: 1rem;
 }
+main section > header {
+  gap: 0.5rem;
+}
+main section > header i {
+  font-size: 2rem;
+}
+main section > header > div span {
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+main > hr {
+  margin: 1rem 0;
+  min-height: 2px;
+  background-color: rgb(var(--foreground)/0.08);
+}
 
 h1 > i, h2 > i, h3 > i, h4 > i {
   margin: 0 0.5rem;
@@ -115,6 +130,11 @@ h1 {
 h2 {
   margin: 0;
   font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1rem;
 }
 
 h4 {
@@ -148,4 +168,109 @@ article hr {
   margin: 1rem 0;
   min-height: 2px;
   background-color: rgb(var(--foreground)/0.08);
+}
+
+main > section {
+  gap: 0.5rem;
+}
+main > section a {
+  color: #45a8ff;
+}
+main > section > hr {
+  margin: 0.25rem 0;
+  min-height: 2px;
+  background-color: transparent;
+}
+main > section > fieldset {
+  background-color: rgb(var(--background-hl));
+  padding: 2rem 1rem 1rem 1rem;
+  border-radius: 1rem;
+  gap: 0.5rem;
+  margin-top: -2rem;
+}
+main > section > fieldset:last-of-type {
+  margin-bottom: 2rem;
+}
+main > section > fieldset.output_register {
+  background-color: #4db764;
+  color: rgb(var(--background));
+}
+main > section > fieldset.output_register a {
+  color: #1069b7;
+}
+main > section > fieldset legend {
+  gap: 0.5rem;
+  padding-top: 3rem;
+  margin-bottom: -1.5rem;
+  font-weight: bold;
+}
+main > section > fieldset input {
+  background-color: rgb(var(--background));
+  color: #4db764;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+}
+main > section > fieldset input::-moz-placeholder {
+  color: rgb(var(--foreground)/0.3);
+}
+main > section > fieldset input::placeholder {
+  color: rgb(var(--foreground)/0.3);
+}
+main > section > fieldset input:focus {
+  color: rgb(var(--foreground));
+  border: 2px solid #4db764;
+}
+main > section > fieldset span {
+  font-size: 0.75rem;
+}
+main > section > fieldset .version_input {
+  gap: 0.25rem;
+}
+main > section > fieldset .version_input input {
+  width: 1.5rem;
+  text-align: center;
+  padding: 0.25rem;
+}
+main > section > fieldset .version_input span {
+  font-weight: bold;
+}
+main > section > fieldset .version_input hr {
+  margin: 0 0.5rem;
+}
+main > section > fieldset .output {
+  background-color: rgb(var(--background)/0.16);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  min-height: 2.5rem;
+}
+main > section > fieldset .output span {
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: bold;
+  word-break: break-all;
+}
+main > section > fieldset .output .button {
+  margin-left: auto;
+  margin-right: -0.5rem;
+}
+main > section > fieldset .array {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+main > section > fieldset .array input {
+  width: 8rem;
+}
+main > section > fieldset .array > .button {
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+}
+main > section > fieldset .array > .button:hover {
+  background-color: rgb(var(--foreground)/0.16);
+}
+main > section > fieldset .array .removeButton {
+  margin-left: -3rem;
+  margin-right: 0.5rem;
 }

@@ -8,6 +8,7 @@
     <title>Confetti Project</title>
     <link rel="stylesheet" href="assets/styles/global.css">
     <script src="https://kit.fontawesome.com/1b6c69daa5.js" crossorigin="anonymous"></script>
+    <script src="assets/scripts/dev_tools.js" defer></script>
 </head>
 
 <body>
@@ -35,6 +36,97 @@
     </header>
     <main>
         <h1>Tools for developers</h1>
+        <hr>
+        <section id="entry_generator">
+            <header>
+                <i class="fa-solid fa-gear"></i>
+                <div>
+                    <strong>Datapack entry generator</strong>
+                    <span>Generate the basic command to register your own datapack. This only includes certain
+                        features!</span>
+                </div>
+            </header>
+            <fieldset>
+                <legend><i class="fa-solid fa-fingerprint"></i> Datapack Id</legend>
+                <input type="text" placeholder="confetti-example" oninput="LimitField.idInput(this, event)">
+                <span>Used to identify your datapack along others by you and other developers, that might use it as
+                    a
+                    dependency.</span>
+            </fieldset>
+            <fieldset>
+                <legend><i class="fa-solid fa-box"></i> Datapack Name</legend>
+                <input type="text" placeholder="Confetti Example"
+                    oninput='Loader.name = this.value.startsWith("{")? `${this.value || this.placeholder}` : `"${this.value || this.placeholder}"`; onInput()'>
+                <span>Display name of your datapack, can use JSON: {"text":"Example Name", "color":"yellow"}</span>
+            </fieldset>
+            <fieldset>
+                <legend><i class="fa-solid fa-paragraph"></i> Datapack Description</legend>
+                <input type="text" placeholder="This is an example description!"
+                    oninput='Loader.description = `"${this.value || this.placeholder}"`; onInput()'>
+                <span>Short description of your datapack.</span>
+            </fieldset>
+            <fieldset>
+                <legend><i class="fa-solid fa-code-compare"></i> Datapack Version</legend>
+                <div class="version_input">
+                    <input type="text" placeholder="1"
+                        oninput="Loader.version[0] = LimitField.versionInput(this, event); onInput();">
+                    <span>.</span>
+                    <input type="text" placeholder="0"
+                        oninput="Loader.version[1] = LimitField.versionInput(this, event); onInput();">
+                    <span>.</span>
+                    <input type="text" placeholder="0"
+                        oninput="Loader.version[2] = LimitField.versionInput(this, event); onInput();">
+                </div>
+                <span>The version of your datapack. 1st digit represents the primary version, 2nd the major version and
+                    3rd the minor one.</span>
+            </fieldset>
+            <fieldset>
+                <legend><i class="fa-solid fa-ticket"></i> Supported Minecraft versions</legend>
+                <div class="version_input">
+                    <span>From:</span>
+                    <input type="text" placeholder="1"
+                        oninput="Loader.supported_minecraft[0] = LimitField.versionInput(this, event); onInput();">
+                    <span>.</span>
+                    <input type="text" placeholder="17"
+                        oninput="Loader.supported_minecraft[1] = LimitField.versionInput(this, event); onInput();">
+                    <span>.</span>
+                    <input type="text" placeholder="0"
+                        oninput="Loader.supported_minecraft[2] = LimitField.versionInput(this, event); onInput();">
+                    <hr>
+                    <span>To:</span>
+                    <input type="text" placeholder="1"
+                        oninput="Loader.supported_minecraft[3] = LimitField.versionInput(this, event); onInput();">
+                    <span>.</span>
+                    <input type="text" placeholder="19"
+                        oninput="Loader.supported_minecraft[4] = LimitField.versionInput(this, event); onInput();">
+                    <span>.</span>
+                    <input type="text" placeholder="3"
+                        oninput="Loader.supported_minecraft[5] = LimitField.versionInput(this, event); onInput();">
+                </div>
+                <span>The range of supported minecraft versions.</span>
+            </fieldset>
+            <fieldset id="authors">
+                <legend><i class="fa-solid fa-user-group"></i> Authors</legend>
+                <div class="array">
+                    <button class="button" onclick="appendArrayItem(this, 'author'); onInput()">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <span>Authors of your datapack.</span>
+            </fieldset>
+            <fieldset class="output_register">
+                <legend>Output</legend>
+                <div class="output">
+                    <span id="output_register"></span>
+                    <button class="button">
+                        <i class="fa-solid fa-copy"></i>
+                        <strong>Copy</strong>
+                    </button>
+                </div>
+                <span>Copy this into the <a href="https://github.com/ConfettiMC/datapack/wiki#register">register
+                        function</a></span>
+            </fieldset>
+        </section>
     </main>
 </body>
 

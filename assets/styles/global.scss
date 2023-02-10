@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;700&display=swap');
 @import "common";
 
 :root {
@@ -66,6 +66,31 @@ main {
     max-width: calc(100vw - 2rem);
     margin: 2rem auto;
     gap: 1rem;
+
+    section > header {
+        @extend %rowC;
+        gap: 0.5rem;
+
+        i {
+            font-size: 2rem;
+        }
+
+        & > div {
+            @extend %colS;
+
+            span {
+                font-size: 0.75rem;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    & > hr {
+        @extend %line;
+        margin: 1rem 0;
+        min-height: 2px;
+        background-color: atheme(--foreground, 0.08);
+    }
 }
 
 h1, h2, h3, h4 {
@@ -82,6 +107,11 @@ h1 {
 h2 {
     margin: 0;
     font-size: 1.5rem;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1rem;
 }
 
 h4 {
@@ -123,5 +153,143 @@ article {
         margin: 1rem 0;
         min-height: 2px;
         background-color: atheme(--foreground, 0.08);
+    }
+}
+
+
+main > section {
+    @extend %colS;
+    gap: 0.5rem;
+
+    a {
+        color: #45a8ff;
+    }
+
+    & > hr {
+        @extend %line;
+        margin: 0.25rem 0;
+        min-height: 2px;
+        background-color: transparent;
+    }
+
+    & > fieldset {
+        @extend %reset;
+        @extend %colS;
+        background-color: theme(--background-hl);
+        padding: 2rem 1rem 1rem 1rem;
+        border-radius: 1rem;
+        gap: 0.5rem;
+        margin-top: -2rem;
+        
+        &:last-of-type {
+            margin-bottom: 2rem;
+        }
+
+        &.output_register {
+            background-color: #4db764;
+            color: theme(--background);
+
+            a {
+                color: #1069b7;
+            }
+        }
+
+        legend {
+            @extend %rowC;
+            gap: 0.5rem;
+            padding-top: 3rem;
+            margin-bottom: -1.5rem;
+            font-weight: bold;
+        }
+
+        input {
+            @extend %reset;
+            @extend %fontM;
+            background-color: theme(--background);
+            color: #4db764;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 2px solid transparent;
+
+            &::placeholder {
+                color: atheme(--foreground, 0.3);
+            }
+
+            &:focus {
+                color: theme(--foreground);
+                border: 2px solid #4db764;
+            }
+        }
+
+        span {
+            font-size: 0.75rem;
+        }
+
+        .version_input {
+            @extend %rowC;
+            gap: 0.25rem;
+            
+            input {
+                width: 1.5rem;
+                text-align: center;
+                padding: 0.25rem;
+            }
+
+            span {
+                font-weight: bold;
+            }
+
+            hr {
+                @extend %space;
+                margin: 0 0.5rem;
+            }
+        }
+
+        .output {
+            background-color: atheme(--background, 0.16);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            min-height: 2.5rem;
+
+            span {
+                @extend %fontM;
+                font-style: normal;
+                font-size: 0.75rem;
+                font-weight: bold;
+                word-break: break-all;
+            }
+
+            .button {
+                margin-left: auto;
+                margin-right: -0.5rem;
+            }
+        }
+
+        .array {
+            @extend %rowC;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            input {
+                width: 8rem;
+            }
+
+            & > .button {
+                @extend %rowC;
+                justify-content: center;
+                height: 2rem;
+                width: 2rem;
+                padding: 0;
+
+                &:hover {
+                    background-color: atheme(--foreground, 0.16);
+                }
+            }
+
+            .removeButton {
+                margin-left: -3rem;
+                margin-right: 0.5rem;
+            }
+        }
     }
 }
