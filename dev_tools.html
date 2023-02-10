@@ -118,7 +118,8 @@
                 <legend>Output</legend>
                 <div class="output">
                     <span id="output_register"></span>
-                    <button class="button">
+                    <button class="button"
+                        onclick="navigator.clipboard.writeText(document.querySelector('#output_register').innerHTML); alert('Copied to clipboard!')">
                         <i class="fa-solid fa-copy"></i>
                         <strong>Copy</strong>
                     </button>
