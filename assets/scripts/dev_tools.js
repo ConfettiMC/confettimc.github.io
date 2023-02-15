@@ -18,7 +18,7 @@ function onInput() {
         }
     });
     output_register.innerHTML = `
-    data modify storage confetti Loader append value {Id: "${Loader.id}", Name: '${Loader.name}', Description: '${Loader.description}', Version: [B; ${Loader.version[0]}b, ${Loader.version[1]}b, ${Loader.version[2]}b], Authors: [${Loader.authors.join(', ')}], Minecraft: {From: [${Loader.supported_minecraft[0]}, ${Loader.supported_minecraft[1]}, ${Loader.supported_minecraft[2]}], To: [${Loader.supported_minecraft[3]}, ${Loader.supported_minecraft[4]}, ${Loader.supported_minecraft[5]}]}, Dependencies: [], Gamerules: [], Permissions: []}
+    data modify storage confetti Loader append value {Id: "${Loader.id}", Name: '${Loader.name}', Description: '${Loader.description}', Version: [B; ${Loader.version[0]}b, ${Loader.version[1]}b, ${Loader.version[2]}b], Authors: [${Loader.authors.join(', ')}], Minecraft: {From: [${Loader.supported_minecraft[0]}, ${Loader.supported_minecraft[1]}, ${Loader.supported_minecraft[2]}], To: [${Loader.supported_minecraft[3]}, ${Loader.supported_minecraft[4]}, ${Loader.supported_minecraft[5]}]}, Dependencies: [], GameRules: [], Permissions: []}
     `;
 }
 
